@@ -1,21 +1,19 @@
 package TPO1.Adapter;
 
-import TPO1.WeatherNow.WeatherNowCelcius;
-
 public class ClimaCelcius {
 
-    private WeatherNowCelcius weatherNow;
+    private WeatherNow climaActual;
     private double temperatura;
     private String ciudad;
 
     public ClimaCelcius(String ciudad) throws Exception {
-        weatherNow = new WeatherNowCelcius();
-        temperatura = weatherNow.obtenerTemperatura(ciudad);
+        climaActual = new WeatherNow();
+        temperatura = climaActual.obtenerTemperatura(ciudad, 'c');
         this.ciudad = ciudad;
     }
 
     public void actualizarTemperatura() throws Exception {
-        temperatura = weatherNow.obtenerTemperatura(ciudad);
+        temperatura = climaActual.obtenerTemperatura(ciudad, 'c');
     }
 
     public double getTemperatura() {

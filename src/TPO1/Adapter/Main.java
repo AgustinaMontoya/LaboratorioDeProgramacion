@@ -12,8 +12,8 @@ public class Main {
         // System.out.println(aplicacion.comprobarTemperatura(climaFahrenheit)); // no
         // compila
 
-        // System.out.println("La temperatura en Fahrenheit en " +
-        // climaFahrenheit.getCiudad() + " es: " + climaFahrenheit.getTemperatura() +
+        // System.out.println("La temperatura en Fahrenheit en "
+        // +climaFahrenheit.getCiudad() + " es: " + climaFahrenheit.getTemperatura() +
         // "°F."); // si queremos saber la temperatura en °F.
 
         // Adaptamos para resolver el problema.
