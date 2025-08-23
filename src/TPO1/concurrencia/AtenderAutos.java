@@ -20,7 +20,7 @@ public class AtenderAutos extends RecursiveAction {
 
         if (cantidad <= maxAutos) {
             // Caso base: atender directamente a los autos
-            while (i <= fin) {
+            while (i < fin) {
                 System.out.println(Thread.currentThread().getName() +
                         " atendiendo a " + autos[i]);
                 try {
