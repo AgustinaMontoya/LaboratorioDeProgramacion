@@ -8,7 +8,7 @@ public class Aplicacion {
     }
 
     public int getTemperatura() {
-        return this.gradogitsCelcius;
+        return this.gradosCelcius;
     }
 
 }
