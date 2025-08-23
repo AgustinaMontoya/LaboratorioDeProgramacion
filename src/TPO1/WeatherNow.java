@@ -10,7 +10,7 @@ public class WeatherNow {
         int temperatura;
         HttpClient cliente = HttpClient.newHttpClient();
         HttpRequest solicitud = HttpRequest.newBuilder(
-                URI.create("https://wttr.in/" + ciudad + "?format=3")
+                URI.create("https://wttr.in/" + ciudad + "?format=3&u")
         ).build();
 
         String cuerpo = cliente.send(solicitud, HttpResponse.BodyHandlers.ofString()).body(); // "Salta: 🌦 +16°C"
