@@ -1,13 +1,13 @@
-package TPO1.concurrencia;
+package TPO1.ForkJoin_RecursiveAction;
 
 import java.util.concurrent.RecursiveAction;
 
 public class AtenderAutos extends RecursiveAction {
     private static final int maxAutos = 3; // Cantidad máxima de autos que atiende cada playero
-    private final String[] autos;
+    private final Automovil[] autos;
     private final int inicio, fin;
 
-    public AtenderAutos(String[] autos, int inicio, int fin) {
+    public AtenderAutos(Automovil[] autos, int inicio, int fin) {
         this.autos = autos;
         this.inicio = inicio;
         this.fin = fin;
@@ -15,32 +15,31 @@ public class AtenderAutos extends RecursiveAction {
 
     @Override
     protected void compute() {
+        // Se fija si la cantidad de autos asignados es menor o igual a maxAutos
         int cantidad = fin - inicio;
         int i = inicio;
-
         if (cantidad <= maxAutos) {
-            // Caso base: atender directamente a los autos
+            // Caso Base: La cantidad de autos es menor a maxAutos, no hace falta dividir
             while (i < fin) {
                 System.out.println(Thread.currentThread().getName() +
-                        " atendiendo a " + autos[i]);
+                        " atendiendo a " + autos[i].getNombre());
                 try {
-                    Thread.sleep(200); // Simula tiempo de carga
+                    Thread.sleep(500); // Simula tiempo de carga
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
                 i++;
             }
         } else {
-            // Dividir en dos grupos
+            // Caso Recursivo: La cantidad de autos es mayor, entonces divide
             int medio = (inicio + fin) / 2;
-
+            // Crea auxiliares para facilitar la division
             AtenderAutos izquierda = new AtenderAutos(autos, inicio, medio);
             AtenderAutos derecha = new AtenderAutos(autos, medio, fin);
-
-            // Ejecutar en paralelo
-            izquierda.fork();        // lanza la izquierda en paralelo
-            derecha.compute();       // ejecuta la derecha en este hilo
-            izquierda.join();        // espera a que termine la izquierda
+            //
+            izquierda.fork();
+            derecha.compute();
+            izquierda.join();
         }
     }
 }
