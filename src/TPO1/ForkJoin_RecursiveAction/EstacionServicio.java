@@ -7,11 +7,11 @@ public class EstacionServicio {
     public static void main(String[] args) {
         Automovil[] autos = crearAutomoviles();
 
-       // "Pileta de hilos", usa todos los hilos disponibles
+        // "Pileta de hilos", usa todos los hilos disponibles
         ForkJoinPool playeros = new ForkJoinPool();
 
         // Límito para que trabajen 4 hilos
-        //ForkJoinPool playeros = new ForkJoinPool(4);
+        // ForkJoinPool playeros = new ForkJoinPool(4);
 
         AtenderAutos atender = new AtenderAutos(autos, 0, autos.length);
 
@@ -22,13 +22,13 @@ public class EstacionServicio {
         System.out.println("Todos los autos fueron atendidos.");
     }
 
-    public static Automovil[] crearAutomoviles(){
+    public static Automovil[] crearAutomoviles() {
         Automovil[] autos = new Automovil[150];
         Automovil auto;
-        String nombre = "";
-        for(int i = 0; i < autos.length; i++){
-            nombre = String.valueOf(i);
-            auto = new Automovil(nombre);
+        String patente = "";
+        for (int i = 0; i < autos.length; i++) {
+            patente = String.valueOf(i);
+            auto = new Automovil(patente);
             autos[i] = auto;
         }
         return autos;

@@ -4,11 +4,11 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         Aplicacion aplicacion = new Aplicacion(15);
-        ClimaCelcius climaCelcius = new ClimaCelcius("neuquen");
+        ClimaCelcius climaCelcius = new ClimaCelcius("Cipolletti");
         // climaCelcius funciona con la aplicacion.
-        System.out.println(aplicacion.comprobarTemperatura(climaCelcius));
+        System.out.println(aplicacion.pronostico(climaCelcius));
 
-        ClimaFahrenheit climaFahrenheit = new ClimaFahrenheit("neuquen");
+        ClimaFahrenheit climaFahrenheit = new ClimaFahrenheit("Cipolletti");
         // System.out.println(aplicacion.comprobarTemperatura(climaFahrenheit)); // no
         // compila
 
@@ -18,6 +18,6 @@ public class Main {
 
         // Adaptamos para resolver el problema.
         AdaptarTemperatura adaptaClima = new AdaptarTemperatura(climaFahrenheit);
-        System.out.println(aplicacion.comprobarTemperatura(adaptaClima));
+        System.out.println(aplicacion.pronostico(adaptaClima));
     }
 }
