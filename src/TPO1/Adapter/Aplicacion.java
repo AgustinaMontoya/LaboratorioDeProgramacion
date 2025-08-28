@@ -13,7 +13,7 @@ public class Aplicacion {
         return this.temperaturaAmbiente;
     }
 
-    public String comprobarTemperatura(ClimaCelcius clima) {
+    public String pronostico(ClimaCelcius clima) {
         String cadena;
         String ciudad = clima.getCiudad();
         double temperatura = clima.getTemperatura();
