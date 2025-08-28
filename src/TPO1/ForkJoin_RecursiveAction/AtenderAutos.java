@@ -36,9 +36,11 @@ public class AtenderAutos extends RecursiveAction {
             // Crea auxiliares para facilitar la division
             AtenderAutos izquierda = new AtenderAutos(autos, inicio, medio);
             AtenderAutos derecha = new AtenderAutos(autos, medio, fin);
-            //
+            // Divide la tarea del auxiliar izquierdo
             izquierda.fork();
+            // Divide el auxiliar derecho y lo ejecuta
             derecha.compute();
+            // Ejecuta la tarea dividida del nodo derecho
             izquierda.join();
         }
     }

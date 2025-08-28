@@ -16,6 +16,7 @@ public class EstacionServicio {
         AtenderAutos atender = new AtenderAutos(autos, 0, autos.length);
 
         // Envia la tarea "atender" a la pileta de hilos para que trabajen
+        // Invoke() lanza la tarea y espera a que sea terminada para continuar.
         playeros.invoke(atender);
 
         System.out.println("Todos los autos fueron atendidos.");
