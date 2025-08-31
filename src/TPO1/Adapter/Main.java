@@ -9,7 +9,7 @@ public class Main {
         System.out.println(aplicacion.pronostico(climaCelcius));
 
         ClimaFahrenheit climaFahrenheit = new ClimaFahrenheit("Cipolletti");
-        // System.out.println(aplicacion.comprobarTemperatura(climaFahrenheit)); // no
+        // System.out.println(aplicacion.pronostico(climaFahrenheit)); // no
         // compila
 
         // System.out.println("La temperatura en Fahrenheit en "
