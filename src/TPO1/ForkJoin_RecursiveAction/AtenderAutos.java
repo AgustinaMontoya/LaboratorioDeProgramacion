@@ -3,7 +3,7 @@ package TPO1.ForkJoin_RecursiveAction;
 import java.util.concurrent.RecursiveAction;
 
 public class AtenderAutos extends RecursiveAction {
-    private static final int maxAutos = 3; // Cantidad máxima de autos que atiende cada playero
+    private static final int maxAutos = 6; // Cantidad máxima de autos que atiende cada playero
     private final Automovil[] autos;
     private final int inicio, fin;
 
