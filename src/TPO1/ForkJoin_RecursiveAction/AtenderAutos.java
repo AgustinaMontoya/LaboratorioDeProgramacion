@@ -17,18 +17,16 @@ public class AtenderAutos extends RecursiveAction {
     protected void compute() {
         // Se fija si la cantidad de autos asignados es menor o igual a maxAutos
         int cantidad = fin - inicio;
-        int i = inicio;
         if (cantidad <= maxAutos) {
             // Caso Base: La cantidad de autos es menor a maxAutos, no hace falta dividir
-            while (i < fin) {
+            for(int i = inicio; i < fin; i++){
                 System.out.println(Thread.currentThread().getName() +
-                        " atendiendo a " + autos[i].getNombre());
+                        " atendiendo auto #" + autos[i].getNombre());
                 try {
                     Thread.sleep(500); // Simula tiempo de carga
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
-                i++;
             }
         } else {
             // Caso Recursivo: La cantidad de autos es mayor, entonces divide
