@@ -1,0 +1,55 @@
+body {
+    background-image: url("../resource/background/BackgroundOne.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    color: black;
+    font: italic;
+    text-align: center;
+}
+
+h2 {
+    color: black;
+    font: italic;
+    text-align: center;
+}
+
+button{
+    outline: none;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    align-items: center;
+}
+
+/*------------------------------------------------------------------------------------------------------------*/
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+    gap: 100px;
+}
+
+.polaroid {
+    width: 30vh; /* Ancho fijo */
+    height: 30vh; /* Alto fijo */
+    background-color: white; /* Fondo tipo polaroid */
+    border: 10px solid white; /* Color del borde */
+    border-radius: 8px; /* Bordes redondeados */
+    padding-bottom: 50px; /* Espacio de abajo para dejar un texto */
+    object-fit: cover; /* Mantiene la proporción de la imagen recortandola */
+    display: flex;
+    justify-content: space-around;
+    margin: 5vh;
+}
+
+.polaroidText {
+    font-size: 25px;
+    text-align: center;
+
+}

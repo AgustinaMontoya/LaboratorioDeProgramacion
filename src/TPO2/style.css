@@ -1,9 +1,0 @@
-body{
-    background-image: url("resource/background/BackgroundOne.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0;
-    height: 100vh;
-    width: 100vh; /* Arreglar para que se vea bien en todos los tamaños de ventana */
-}
