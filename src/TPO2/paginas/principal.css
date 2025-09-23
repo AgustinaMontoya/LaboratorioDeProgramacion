@@ -1,0 +1,48 @@
+body {
+    background-image: url("../resource/background/PáginaPrincipal.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: "Hug Me Tight", fantasy;
+}
+
+h1 {
+    font-family: "Hug Me Tight", fantasy;
+    text-align: center;
+}
+
+h2 {
+    font-family: "Cotton Candy", fantasy;
+    text-align: center;
+}
+section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+section a{
+    text-decoration: none;
+}
+
+button {
+    justify-content: center;
+    row-gap: 20px;
+
+    font-family: "Hug Me Tight", fantasy;
+    font-size: 20px;
+
+    background-color: navajowhite;
+    border-radius: 8px;
+    padding: 10px 20px;
+
+    transition: background-color 0.3ms ease;
+    outline: none;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: burlywood;
+}

@@ -1,38 +1,45 @@
 body {
-    background-image: url("../resource/background/BackgroundOne.jpg");
+    background-image: url("../resource/background/Adopciones.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    margin: 0;
-    max-width: 100%;
-    height: auto;
+    font-family: "Hug Me Tight", fantasy;
 }
 
 h1 {
-    color: black;
-    font: italic;
+    font-family: "Cotton Candy", fantasy;
     text-align: center;
 }
 
-h2 {
-    color: black;
-    font: italic;
-    text-align: center;
+section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-button{
+section a{
+    text-decoration: none;
+}
+
+button {
+    justify-content: center;
+    row-gap: 10px;
+
+    font-family: "Hug Me Tight", fantasy;
+    font-size: 20px;
+
+    background-color: navajowhite;
+    border-radius: 10px;
+    padding: 15px 20px;
+
+    transition: background-color 0.3ms ease;
     outline: none;
     cursor: pointer;
-    height: 20px;
-    width: 20px;
-    align-items: center;
 }
 
-/*------------------------------------------------------------------------------------------------------------*/
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
-    gap: 100px;
+button:hover {
+    background-color: burlywood;
 }
 
 .polaroid {
@@ -43,13 +50,17 @@ button{
     border-radius: 8px; /* Bordes redondeados */
     padding-bottom: 50px; /* Espacio de abajo para dejar un texto */
     object-fit: cover; /* Mantiene la proporción de la imagen recortandola */
+
     display: flex;
     justify-content: space-around;
     margin: 5vh;
 }
 
 .polaroidText {
+    font-family: "Hug Me Tight", fantasy;
     font-size: 25px;
     text-align: center;
-
 }
+
+
+
