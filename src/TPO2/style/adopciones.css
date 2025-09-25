@@ -1,5 +1,5 @@
 body {
-    background-image: url("../resource/background/Adopciones.png");
+    background-image: url("../assets/images/background/Adopciones.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -9,16 +9,17 @@ body {
 h1 {
     font-family: "Cotton Candy", fantasy;
     text-align: center;
+    font-size: x-large;
 }
 
-section{
+section {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-section a{
+section a {
     text-decoration: none;
 }
 
@@ -49,83 +50,84 @@ button:hover {
     border: 10px solid white; /* Color del borde */
     border-radius: 8px; /* Bordes redondeados */
     padding-bottom: 50px; /*Espacio de abajo para dejar un texto */
-    
+
 
     display: flex;
-    flex-direction: column;   /* apila imagen y texto */
+    flex-direction: column; /* apila imagen y texto */
     align-items: center;
     justify-content: space-around;
     margin: 5vh;
 }
+
 .polaroid figcaption {
     font-family: "Hug Me Tight", fantasy;
-    font-size: 25px;          /* igual a tu polaroidText */
+    font-size: 25px; /* igual a tu polaroidText */
     margin-top: 10px;
     color: black;
 }
+
 .polaroid img {
     width: 100%;
-    height: 30vh;             /* mismo alto que tu base */
-    object-fit: cover;        /* recorta manteniendo proporción */
+    height: 30vh; /* mismo alto que tu base */
+    object-fit: cover; /* recorta manteniendo proporción */
     border-radius: 5px;
     display: block;
 }
 
 .polaroid {
-  perspective: 1000px;         /* efecto 3D */
-  position: relative;          /* contexto para las caras absolutas */
-  overflow: hidden;            /* evita desbordes durante el flip */
+    perspective: 1000px; /* efecto 3D */
+    position: relative; /* contexto para las caras absolutas */
+    overflow: hidden; /* evita desbordes durante el flip */
 }
 
 /* Ocultar el checkbox controlador */
 .polaroid > input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* El label ocupa todo el bloque sin cambiar dimensiones */
 .flip-card {
-  display: block;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
 /* El contenedor que rota*/
 .card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
 }
 
 /* Caras delantera/trasera (mismo tamaño del contenedor) */
 .card-front, .card-back {
-  position: absolute;
-  inset: 0;                    /* top/right/bottom/left: 0 */
-  backface-visibility: hidden; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+    position: absolute;
+    inset: 0; /* top/right/bottom/left: 0 */
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 /* La cara trasera está rotada */
 .card-back {
-
-
     /*Cajeje*/
-  transform: rotateY(180deg);
-  text-align: center;
+    transform: rotateY(180deg);
+    text-align: center;
 }
 
 /* El flip real: cuando el checkbox está checked, rotamos el inner */
 .flip-card > input[type="checkbox"]:checked + .card-inner {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
+
 .flip-card > input[type="checkbox"] {
-  display: none;
+    display: none;
 }
 
