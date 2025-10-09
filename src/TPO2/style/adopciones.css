@@ -9,7 +9,6 @@ body {
 h1 {
     font-family: "Cotton Candy", fantasy;
     text-align: center;
-    font-size: x-large;
 }
 
 section {
@@ -29,7 +28,9 @@ button {
 
     font-family: "Hug Me Tight", fantasy;
     font-size: 20px;
+}
 
+.buttonOpcion {
     background-color: navajowhite;
     border-radius: 10px;
     padding: 15px 20px;
@@ -39,8 +40,17 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.buttonOpcion:hover {
     background-color: burlywood;
+}
+
+.buttonMain {
+    background: none;
+
+}
+
+.buttonMain:hover{
+    cursor: pointer;
 }
 
 .polaroid {
@@ -50,7 +60,6 @@ button:hover {
     border: 10px solid white; /* Color del borde */
     border-radius: 8px; /* Bordes redondeados */
     padding-bottom: 50px; /*Espacio de abajo para dejar un texto */
-
 
     display: flex;
     flex-direction: column; /* apila imagen y texto */
