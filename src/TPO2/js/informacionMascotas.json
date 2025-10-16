@@ -1,0 +1,15 @@
+[
+  { "nombre": "Luna",   "img": "../pets/C1.jpeg", "edad": "2 años", "sexo": "Hembra" },
+  { "nombre": "Max",    "img": "../pets/D1.jpeg", "edad": "2 años", "sexo": "Macho" },
+  { "nombre": "Mia",    "img": "../pets/C2.jpeg", "edad": "2 años", "sexo": "Hembra" },
+  { "nombre": "Rocky",  "img": "../pets/D2.jpeg", "edad": "2 años", "sexo": "Macho" },
+  { "nombre": "Juan",   "img": "../pets/C3.jpeg", "edad": "1 año",  "sexo": "Macho" },
+  { "nombre": "Bella",  "img": "../pets/D3.jpeg", "edad": "3 años", "sexo": "Hembra" },
+  { "nombre": "Oliver", "img": "../pets/C4.jpeg", "edad": "4 años", "sexo": "Macho" },
+  { "nombre": "Lucy",   "img": "../pets/D4.jpeg", "edad": "2 años", "sexo": "Hembra" },
+  { "nombre": "Toby",   "img": "../pets/D5.jpeg", "edad": "5 años", "sexo": "Macho" },
+  { "nombre": "Andre",  "img": "../pets/andre.jpeg", "edad": " 27", "sexo": "Hembra" },
+  { "nombre": "Simba",  "img": "../pets/D6.jpeg", "edad": "1 año",  "sexo": "Macho" },
+  { "nombre": "Cleo",   "img": "../pets/C6.jpeg", "edad": "2 años", "sexo": "Hembra" },
+  { "nombre": "Bruno",  "img": "../pets/D7.jpeg", "edad": "6 años", "sexo": "Macho" }
+]

@@ -68,12 +68,13 @@ button {
     margin: 5vh;
 }
 
-.polaroid figcaption {
-    font-family: "Hug Me Tight", fantasy;
-    font-size: 25px; /* igual a tu polaroidText */
-    margin-top: 10px;
-    color: black;
+.polaroid .title {
+  font-family: "Hug Me Tight", fantasy;
+  font-size: 25px;
+  margin-top: 10px;
+  color: black;
 }
+
 
 .polaroid img {
     width: 100%;
@@ -139,4 +140,25 @@ button {
 .flip-card > input[type="checkbox"] {
     display: none;
 }
+
+/* Paginación */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+.paginacion button.active {
+  background-color: burlywood;
+}
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  gap: 20px;
+  justify-items: center;   /* centra cada tarjeta en su celda */
+  align-items: start;
+  padding: 10px 0 20px;
+}
+
 
