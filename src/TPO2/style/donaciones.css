@@ -1,29 +1,20 @@
 body {
-    background-image: url("../assets/images/background/InicioDeSesion.png");
+    background-image: url("../assets/images/background/Donaciones.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    max-width: 100%;
-    height: auto;
-
-    text-align: justify;
-    font-family: "Cinzel", fantasy;
-    font-size: 20px;
+    font-family: "Hug Me Tight", fantasy;
 }
 
-section{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 30px;
+h1 {
+    font-family: "Hug Me Tight", fantasy;
+    text-align: center;
 }
 
-input{
-    font-size: 20px;
-    width: 500px;
-    height: 30px;
-    background-color: navajowhite;
+h2 {
+    font-family: "Cotton Candy", fantasy;
+    text-align: center;
 }
 
 button {
