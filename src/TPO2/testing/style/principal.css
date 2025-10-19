@@ -23,7 +23,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1800px;
+    max-width: 1920px;
     margin: 0 auto;
     padding: 15px 15px;
     gap: 30px;
@@ -44,8 +44,8 @@ header {
 }
 
 .logo-img {
-    width: 237px;
-    height: 66px;
+    width: 256px;
+    height: 64px;
 }
 
 .logo-text {
@@ -101,7 +101,6 @@ header {
     flex: 1;
     display: flex;
     justify-content: center;
-    
     gap: 15px;
 }
 
