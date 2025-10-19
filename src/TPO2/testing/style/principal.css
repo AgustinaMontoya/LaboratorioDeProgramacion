@@ -44,8 +44,8 @@ header {
 }
 
 .logo-img {
-    width: 100px;
-    height: 100px;
+    width: 237px;
+    height: 66px;
 }
 
 .logo-text {
@@ -100,9 +100,9 @@ header {
 .user-menu {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     
-    gap: 30px;
+    gap: 15px;
 }
 
 .user-btn {
@@ -117,6 +117,7 @@ header {
     text-decoration: none;
     display: inline-block;
     text-align: center;
+    font-size: 14px;
 }
 
 .user-btn:hover {
