@@ -5,7 +5,10 @@ const ITEMS_PER_PAGE = 8; // 2 x 4
 
 // Datos (podés agregar más)
 
-const mascotas = [
+
+
+
+/*const mascotas = [
   { nombre: "Luna",   img: "../assets/images/pets/C1.jpeg", edad: "2 años", sexo: "Hembra" },
   { nombre: "Max",    img: "../assets/images/pets/D1.jpeg", edad: "2 años", sexo: "Macho" },
   { nombre: "Mia",    img: "../assets/images/pets/C2.jpeg", edad: "2 años", sexo: "Hembra" },
@@ -15,18 +18,56 @@ const mascotas = [
   { nombre: "Oliver", img: "../assets/images/pets/C4.jpeg", edad: "4 años", sexo: "Macho" },
   { nombre: "Lucy",   img: "../assets/images/pets/D4.jpeg", edad: "2 años", sexo: "Hembra" },
   { nombre: "Toby",   img: "../assets/images/pets/D5.jpeg", edad: "5 años", sexo: "Macho" },
-  { nombre: "Andre",  img: "../assets/images/pets/andre.jpg", edad: " 27", sexo: "Hembra" },
-  { nombre: "Simba",  img: "../assets/images/pets/D6.jpg", edad: "1 año",  sexo: "Macho" },
-  { nombre: "Cleo",   img: "../assets/images/pets/C5.jpg", edad: "2 años", sexo: "Hembra" },
-  { nombre: "Bruno",  img: "../assets/images/pets/D7.jpeg", edad: "6 años", sexo: "Macho" }
-];
+  { nombre: "Andre",   img: "../assets/images/pets/andre.jpeg", edad: " 27", sexo: "Hembra" },
+  { nombre: "Simba",  img: "../assets/images/pets/D6.jpeg", edad: "1 año",  sexo: "Macho" },
+  { nombre: "Cleo",   img: "../assets/images/pets/C6.jpeg", edad: "2 años", sexo: "Hembra" },
+  { nombre: "Bruno",  img: "../assets/images/pets/D7.jpeg", edad: "6 años", sexo: "Macho" },
+  { nombre: "Luna",   img: "../assets/images/pets/C1.jpeg", edad: "2 años", sexo: "Hembra" }
+];*/
+
+
+// Función de arranque de la aplicación.
+// - Carga los datos (await cargarDatos())
+// - Luego dibuja la primera página según el hash (#p=...)
+// - Maneja cualquier error que ocurra en el proceso.
+async function init() {
+  try {
+    await cargarDatos();                 // Espera a que se cargue el JSON y se llene 'mascotas'
+    renderPagina(getHashPage());         // Primera pintura del grid con la página actual del hash
+  } catch (e) {
+    console.error('No se pudieron cargar los datos:', e); // Log de error si algo falla
+  }
+}
+
+// Cargar datos desde JSON
+
+// Arreglo global donde quedarán los datos de las mascotas.
+let mascotas = [];
+
+// Carga el JSON con fetch y llena 'mascotas'.
+async function cargarDatos() { 
+  // Hacemos la petición al archivo JSON.
+  const masc = await fetch('../js/informacionMascotas.json'); 
+
+  // Si la respuesta es satisfactoria (HTTP 200–299)...
+  if (masc.ok) {
+    const data = await masc.json();  // Parseamos el cuerpo como JSON
+    // en este caso asignamos directo porque el Json ya es un arreglo del formato esperado.
+    mascotas = data;
+
+  } else {
+    // Si el servidor respondió con error (404, 500, etc.), lo registramos.
+    console.error("Error al cargar el archivo JSON:", masc.statusText);
+  }
+}
+
 
 // Referencias a “nodos” (como tener campos a paneles en JavaFX)
 const grid = document.getElementById("catalogo");
 const pag  = document.getElementById("paginacion");
 
 // Cálculo de páginas
-const totalPages = Math.max(1, Math.ceil(mascotas.length / ITEMS_PER_PAGE));
+
 
 // =======================
 // “Métodos”
@@ -90,7 +131,7 @@ function crearTarjeta(item) {
     alert("¡Gracias! Iniciaremos el proceso para adoptar a " + item.nombre + ".");
   });
 
-  // Armar árbol
+  // Armar árbol 
   front.appendChild(img);
   front.appendChild(title);
   back.appendChild(h3);
@@ -110,6 +151,7 @@ function crearTarjeta(item) {
 
 // Dibuja una página (corta el arreglo y lo pinta)
 function renderPagina(p) {
+  let totalPages = Math.max(1, Math.ceil(mascotas.length / ITEMS_PER_PAGE));
   // Clamp
   var actual = p;
   if (actual < 1) actual = 1;
@@ -126,16 +168,17 @@ function renderPagina(p) {
   var frag = document.createDocumentFragment();
   for (var i = 0; i < subset.length; i++) {
     var tarjeta = crearTarjeta(subset[i]);
-    frag.appendChild(tarjeta); // crea el nodo hijo
+    frag.appendChild(tarjeta); // crea el nodo hijo 
   }
-  grid.appendChild(frag);//agrega el nodo al padre / lo enlaza
+  grid.appendChild(frag);//agrega el nodo al padre / lo enlaza 
 
   // Actualizar paginación
-  renderPaginacion(actual);
+  renderPaginacion(actual, totalPages);
 }
 
 // Dibuja los botones de paginación y les pone handler
-function renderPaginacion(actual) {
+function renderPaginacion(actual,totalPages) {
+  
   pag.innerHTML = "";
   if (totalPages <= 1) { pag.hidden = true; return; }
   pag.hidden = false;
@@ -171,10 +214,13 @@ function getHashPage() {
 }
 
 // Eventos “de ciclo de vida” (equivalente a start/ready)
-window.addEventListener("hashchange", function () {
+/*window.addEventListener("hashchange", function () {
   renderPagina(getHashPage());
 });
 
 document.addEventListener("DOMContentLoaded", function () {
   renderPagina(getHashPage()); // primera render
-});
+});*/
+
+document.addEventListener("DOMContentLoaded", init);
+window.addEventListener("hashchange", () => renderPagina(getHashPage()));
