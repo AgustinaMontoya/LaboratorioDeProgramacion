@@ -130,9 +130,10 @@ header {
     padding: 0px 0;
     padding-top: 25px;
     list-style: none;
-    position: absolute;
+    /* pie de página al final de pantalla, pero tiene problemas*/
+    /*position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 100%;*/
 }
 
 .footer-container {
