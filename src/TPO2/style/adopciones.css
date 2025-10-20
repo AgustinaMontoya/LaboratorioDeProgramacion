@@ -1,6 +1,6 @@
 body {
     background-color: #D0D38F;
-    font-family: "Hug Me Tight", fantasy;
+    font-family: "Hug Me Tight", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
@@ -136,7 +136,7 @@ section a {
 button {
     justify-content: center;
     row-gap: 10px;
-    font-family: "Hug Me Tight", fantasy;
+    font-family: "Segoe UI Black";
     font-size: 20px;
 }
 
@@ -179,8 +179,8 @@ button {
 }
 
 .polaroid .title {
-    font-family: "Hug Me Tight", fantasy;
-    font-size: 25px;
+    font-family: "Kathen","Segoe UI Semilight";
+    font-size: 35px;
     margin-top: 10px;
     color: black;
 }

@@ -1,6 +1,7 @@
 body {
     background-color: #D0D38F;
-    font-family: "Hug Me Tight", fantasy;
+    font-family: "Hug Me Tight", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    list-style: none;
 }
 
 header {
@@ -160,4 +161,116 @@ button {
 
 .buttonMain:hover {
     cursor: pointer;
+}
+
+.footer {
+    background-color: navajowhite;
+    padding: 0px 0;
+    padding-top: 25px;
+    list-style: none;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 25px;
+}
+
+.footer-links {
+    width: 80% 20%;
+    padding: 0 15px;
+}
+
+.footer-links h4 {
+    letter-spacing: 1px;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 25px;
+    font-weight: 600;
+    border-bottom: 2px solid #00C3FF;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.footer-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 100px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: black;
+}
+
+.social-links a {
+    display: inline-block;
+    min-height: 40px;
+    width: 40px;
+    background-color: rgb(244, 133, 58);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: black;
+    transition: all .5s ease;
+}
+
+.social-links a:hover {
+    background-color: #608560;
+}
+
+.footer-brand {
+    background-color: navajowhite;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-brand p {
+    font-size: 16px;
+    color: black;
+}
+
+.footer-brand a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    transition: all .5s ease;
+}
+
+.footer-brand a:hover {
+    color: #c5f6d8;
+}
+
+@media (max-width: 991px) {
+    .footer-row {
+        text-align: center;
+    }
+
+    .footer-links ul {
+        display: block;
+    }
+
+    .footer-links {
+        width: 100%;
+        margin-bottom: 30px;
+    }
 }
