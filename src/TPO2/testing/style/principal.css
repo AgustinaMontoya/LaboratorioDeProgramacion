@@ -228,8 +228,23 @@ header {
     color: #39ABA0;
 }
 
-@media(max-width:991px) {
-    .footer-row{
+@media(max-width:990px) {
+    .header-container {
+        display: block;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .nav-menu {
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .footer-row {
         text-align: center;
     }
 
