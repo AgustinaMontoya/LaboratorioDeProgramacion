@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="../style/inicioSesion.css">
+</head>
+<body>
+<!-- BOTONES A OTRAS PAGINAS -->
+<header>
+    <div class="header-container">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="principal.html">
+                <img src="../testing/assets/images/logos/dogcatlogo.png" alt="Logo Huellitas" class="logo-img">
+            </a>
+        </div>
+        <!-- Menú de navegación -->
+        <ul class="nav-menu">
+            <li><a href="adopciones.html">Adopciones</a></li>
+            <li><a href="refugios.html">Refugios</a></li>
+            <li><a href="">Tienda</a></li>
+            <li><a href="donaciones.html">Donaciones</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <!-- Menú de usuario -->
+        <div class="user-menu">
+            <a href="inicioSesion.html" class="user-btn">Iniciar Sesión</a>
+            <a href="" class="user-btn primary">Registrarse</a>
+        </div>
+    </div>
+</header>
+<!--- PARA INICIAR SESIÓN --->
+<div class="wrapper">
+    <div class="form-container sign-up">
+        <form action="#">
+            <h2>Registrarse</h2>
+            <div class="form-group">
+                <input type="text" required>
+                <i class="fas fa-user"></i>
+                <label for="">usuario</label>
+            </div>
+            <div class="form-group">
+                <input type="email" required>
+                <i class="fas fa-at"></i>
+                <label for="">email</label>
+            </div>
+            <div class="form-group">
+                <input type="password" required>
+                <i class="fas fa-lock"></i>
+                <label for="">contraseña</label>
+            </div>
+            <div class="form-group">
+                <input type="password" required>
+                <i class="fas fa-lock"></i>
+                <label for="">confirmar contraseña</label>
+            </div>
+            <button type="submit" class="btn">Registrarse</button>
+            <div class="link">
+                <p>¿Ya tienes cuenta? <a href="#" class="signin-link"> Inicia sesión</a></p>
+            </div>
+        </form>
+    </div>
+    <div class="form-container sign-in">
+        <form action="#">
+            <h2>Iniciar sesión</h2>
+            <div class="form-group">
+                <input type="text" required>
+                <i class="fas fa-user"></i>
+                <label for="">usuario</label>
+            </div>
+            <div class="form-group">
+                <input type="password" required>
+                <i class="fas fa-lock"></i>
+                <label for="">contraseña</label>
+            </div>
+            <div class="forgot-pass">
+                <a href="#">¿Olvidaste la contraseña?</a>
+            </div>
+            <button type="submit" class="btn">Iniciar sesión</button>
+            <div class="link">
+                <p>¿No tienes usuario?<a href="#" class="signup-link"> Registrarse</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../js/inicioSesion.js"></script>
+</body>
+</html>
