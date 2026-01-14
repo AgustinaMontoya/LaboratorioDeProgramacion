@@ -110,7 +110,7 @@ function crearTarjeta(item) {
 
     const pEdad = document.createElement("p");
     pEdad.className = "edad";
-    pEdad.textContent = "Edad: " + (item.edad || "—");
+    pEdad.textContent = "Edad: " + (edad(item.edad) || "—");
 
     const pSexo = document.createElement("p");
     pSexo.className = "sexo";
@@ -141,7 +141,26 @@ function crearTarjeta(item) {
     wrapper.appendChild(label);
     return wrapper;
 }
+function edad(fNacimiento) {
+    const hoy = new Date();//fecha actual
+    const nacimiento = new Date(fNacimiento);//convierte el string a fecha
+    let respuesta;
 
+    if (isNaN(nacimiento.getTime())) respuesta = "fecha invalida"; // fecha inválida
+    let años = hoy.getFullYear() - nacimiento.getFullYear();
+    let meses = hoy.getMonth() - nacimiento.getMonth();
+    
+    if (hoy.getDate() < nacimiento.getDate()) meses--;
+
+    if (meses < 0) {
+        años--;
+        meses += 12;
+    }
+
+    if (años > 0){ respuesta = `${años} año${años !== 1 ? "s" : ""}`;}else{respuesta =`${meses} mes${meses !== 1 ? "es" : ""}`;}
+
+    return respuesta
+}
 // Dibuja una página (corta el arreglo y lo pinta)
 function renderPagina(p) {
     let totalPages = Math.max(1, Math.ceil(mascotas.length / ITEMS_PER_PAGE));
