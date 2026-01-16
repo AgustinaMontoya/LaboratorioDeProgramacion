@@ -1,4 +1,5 @@
 [
+  
   { "nombre": "Luna",   "img": "../assets/images/pets/C1.jpg",  "edad": "2024-11-15", "sexo": "Hembra" },
   { "nombre": "Max",    "img": "../assets/images/pets/D1.jpg",  "edad": "2024-09-13", "sexo": "Macho" },
   { "nombre": "Mia",    "img": "../assets/images/pets/C2.jpg",  "edad": "2024-01-13", "sexo": "Hembra" },
@@ -25,5 +26,4 @@
   { "nombre": "Hailee", "img": "../assets/images/pets/D13.jpg", "edad": "2025-09-13", "sexo": "Hembra" },
   { "nombre": "Charly", "img": "../assets/images/pets/D14.jpg", "edad": "2025-11-13", "sexo": "Hembra" }
 ]
-
 
