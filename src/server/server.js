@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, "../TPO2/website")));
 const vistas = ["/", "/adopciones", "/refugios", "/tienda", "/donaciones", "/contacto"];
 vistas.forEach(ruta => {
     app.get(ruta, (req, res) => {
-        const archivo = ruta === "/" ? "principal.html" : `${ruta.replace("/", "")}.html`;
+        const archivo = ruta === "/" ? "principal.html" : `${ruta.replace("/", "")}.html`;// Mapeo de ruta a archivo
         res.sendFile(path.join(__dirname, "..", "TPO2", "website", archivo));
     });
 });
@@ -21,9 +21,9 @@ vistas.forEach(ruta => {
 app.get("/mascotas", async (req, res) => {
     try {
         // 1. Leemos el archivo JSON
-        const rutaJSON = path.join(__dirname, "..", "TPO2", "js", "informacionMascotas.json");
-        const data = await fs.readFile(rutaJSON, "utf-8");
-        const todasLasMascotas = JSON.parse(data);
+        const rutaJSON = path.join(__dirname, "..", "TPO2", "js", "informacionMascotas.json");// Ruta al archivo    
+        const data = await fs.readFile(rutaJSON, "utf-8"); // Leemos como texto
+        const todasLasMascotas = JSON.parse(data); // Array completo de mascotas
 
         // 2. Configuramos la paginación
         const page = parseInt(req.query.page) || 1; // Si no envían página, es la 1
