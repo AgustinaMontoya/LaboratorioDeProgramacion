@@ -2,11 +2,12 @@ import { MascotaModel } from "../models/mascota_model.js";
 
 export class MascotasController {
     static async getAll(req, res) {
+        
         try {
             const page = parseInt(req.query.page) || 1;
             const limit = 8;
             
-            // Pasamos también los filtros del query si existen
+            console.log("Filtros recibidos:", req.query);// Log de los filtros recibidos
             const filters = {
                 min: req.query.min,
                 max: req.query.max

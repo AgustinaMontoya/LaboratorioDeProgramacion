@@ -7,12 +7,24 @@ const __dirname = path.dirname(__filename);
 
 export class MascotaModel {
     static async getAll(page, limit, filters) {
+        
         try {
             const rutaJSON = path.join(__dirname, '../../TPO2/js/informacionMascotas.json');
             console.log("Leyendo JSON desde:", rutaJSON);
             
             const data = await fs.readFile(rutaJSON, 'utf-8');
             let todasLasMascotas = JSON.parse(data);
+
+            if (!Array.isArray(todasLasMascotas)) {
+                throw new Error("El formato del JSON es incorrecto");
+            }else {
+                if (filters.min) {
+                    todasLasMascotas = todasLasMascotas.filter(mascota => mascota.edad >= parseInt(filters.min)); // Filtro por edad mínima
+                }
+                if (filters.max) {
+                    todasLasMascotas = todasLasMascotas.filter(mascota => mascota.edad <= parseInt(filters.max)); // Filtro por edad máxima
+                }
+            }
             // Aquí podríamos aplicar filtros si los tuviéramos (min, max, etc.)
             // Paginación
             const startIndex = (page - 1) * limit;

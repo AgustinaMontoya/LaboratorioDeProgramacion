@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import { mascotasRoutes } from "./routes/mascotas_rutas.js";
+import { vistasRoutes } from "./routes/vistas_rutas.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,15 +16,10 @@ app.use(express.static(path.join(__dirname, "../TPO2")));
 app.use(express.static(path.join(__dirname, "../TPO2/website")));
 
 // --- API ---
-app.use("/mascotas", mascotasRoutes); 
+app.use("/api/mascotas", mascotasRoutes); 
+
 // --- VISTAS HTML ---
-const vistas = ["/", "/adopciones", "/refugios", "/tienda", "/donaciones", "/contacto"];
-vistas.forEach(ruta => {
-    app.get(ruta, (req, res) => {
-        const archivo = ruta === "/" ? "principal.html" : `${ruta.replace("/", "")}.html`;
-        res.sendFile(path.join(__dirname, "..", "TPO2", "website", archivo));
-    });
-});
+app.use("/", vistasRoutes);
 
 app.listen(PORT, () => {
     console.log(`Servidor MVC corriendo en http://localhost:${PORT}`);

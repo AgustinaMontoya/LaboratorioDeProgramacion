@@ -1,4 +1,4 @@
-const API_URL = '/mascotas';
+const API_URL = '/api/mascotas';
 const contenedor = document.getElementById("catalogo");
 const paginacion = document.getElementById("paginacion");
 
@@ -28,12 +28,8 @@ async function cargarPagina(numeroPagina) {
 function renderizarTarjetas(listaMascotas) {
     const html = listaMascotas.map(mascota => {
         // Calculamos edad simple (si es fecha o texto)
-        let edadDisplay = mascota.edad;
-        const fecha = new Date(mascota.edad);
-        if (!isNaN(fecha)) {
-             // Si es fecha válida, calculamos años aprox
-             edadDisplay = new Date().getFullYear() - fecha.getFullYear() + " años";
-        }
+        let edadDisplay = calcularEdadExacta(mascota.edad);
+        
 
         return `
         <div class="polaroid">
@@ -93,5 +89,32 @@ function renderizarBotones(actual, total) {
 // Función auxiliar para el botón del click
 function adoptar(nombre) {
     alert(`¡Gracias por tu interés en ${nombre}!`);
-    // Aquí puedes redirigir a contacto.html
+
+}
+
+
+function calcularEdadExacta(fechaString) {
+    const nacimiento = new Date(fechaString);
+    
+    // Si no es una fecha válida (ej: "2 años"), devolvemos el texto original
+    if (isNaN(nacimiento.getTime())) return fechaString;
+
+    const hoy = new Date();
+    
+    let anios = hoy.getFullYear() - nacimiento.getFullYear();
+    let meses = hoy.getMonth() - nacimiento.getMonth();
+
+    // Ajuste: Si el mes actual es menor al mes de nacimiento, 
+    // o es el mismo mes pero no ha llegado el día, restamos un año.
+    if (meses < 0 || (meses === 0 && hoy.getDate() < nacimiento.getDate())) {
+        anios--;
+        meses += 12; // Sumamos 12 para obtener los meses restantes del año anterior
+    }
+
+    // Lógica de visualización
+    if (anios > 1) return `${anios} años`;
+    if (anios === 1) return `${anios} año`;
+    if (anios === 0 && meses > 0) return `${meses} meses`;
+    
+    return "Recién nacido"; // Si tiene 0 años y 0 meses
 }
